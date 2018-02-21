@@ -113,8 +113,8 @@ articleView.create = () => {
   $('#article-json').val(`${JSON.stringify(article)},`);
 };
 
-// COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// DONE: When is this function called? What event ultimately triggers its execution?
+// articleView.submit is called when the user submits a new-form element.  Clicking the submit button from the new form.
 articleView.submit = event => {
   event.preventDefault();
   let article = new Article({
@@ -126,8 +126,8 @@ articleView.submit = event => {
     publishedOn: $('#article-published:checked').length ? new Date() : null
   });
 
-  // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-  // PUT YOUR RESPONSE HERE
+  // DONE: Where is this function defined? When is this function called? What event ultimately triggers its execution?
+  // insertRecord() is defined in the article.js file.  It is called when a new instance of an article is being submited to the new-form.  Ultimately, the submit event will trigger the execution.
   article.insertRecord();
 }
 
